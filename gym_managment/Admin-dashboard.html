@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Διαχειριστικό Σύστημα - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Απλά στυλ για παράδειγμα */
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    header { text-align: center; }
+    header nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; }
+    header nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    section { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    form { margin-top: 10px; }
+    form label { display: block; margin: 5px 0 2px; }
+    form input, form select, form textarea { width: 100%; padding: 5px; margin-bottom: 10px; box-sizing: border-box; }
+    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    button:hover { background-color: #357ae8; }
+    .item { padding: 5px 0; border-bottom: 1px solid #eee; }
+    .item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Διαχειριστικό Σύστημα - Admin Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#registration-requests">Αιτήματα Εγγραφής</a></li>
+        <li><a href="#user-management">Διαχείριση Χρηστών</a></li>
+        <li><a href="#trainer-management">Διαχείριση Γυμναστών</a></li>
+        <li><a href="#program-management">Διαχείριση Προγραμμάτων</a></li>
+        <li><a href="#group-programs-management">Ομαδικά Προγράμματα</a></li>
+        <li><a href="#announcement-management">Ανακοινώσεις/Προσφορές</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Διαχείριση Αιτημάτων Εγγραφής -->
+    <section id="registration-requests">
+      <h2>Αιτήματα Εγγραφής</h2>
+      <div id="requests-list">
+        <!-- Τα αιτήματα εγγραφής φορτώνονται δυναμικά -->
+      </div>
+    </section>
+
+    <!-- 2. Διαχείριση Χρηστών -->
+    <section id="user-management">
+      <h2>Διαχείριση Χρηστών</h2>
+      <div id="users-list">
+        <!-- Λίστα χρηστών -->
+      </div>
+      <form id="update-user-form">
+        <h3>Ενημέρωση Χρήστη</h3>
+        <input type="hidden" id="user-id" name="userId">
+        <label for="user-name">Όνομα:</label>
+        <input type="text" id="user-name" name="name" required>
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="email" required>
+        <label for="user-role">Ρόλος:</label>
+        <select id="user-role" name="role">
+          <option value="user">Χρήστης</option>
+          <option value="admin">Διαχειριστής</option>
+        </select>
+        <button type="submit">Αποθήκευση</button>
+      </form>
+    </section>
+
+    <!-- 3. Διαχείριση Γυμναστών -->
+    <section id="trainer-management">
+      <h2>Διαχείριση Γυμναστών</h2>
+      <div id="trainers-list">
+        <!-- Λίστα γυμναστών -->
+      </div>
+      <form id="trainer-form">
+        <h3>Δημιουργία / Επεξεργασία Γυμναστών</h3>
+        <input type="hidden" id="trainer-id" name="trainerId">
+        <label for="trainer-firstName">Όνομα:</label>
+        <input type="text" id="trainer-firstName" name="firstName" required>
+        <label for="trainer-lastName">Επώνυμο:</label>
+        <input type="text" id="trainer-lastName" name="lastName" required>
+        <label for="trainer-specialty">Ειδικότητα:</label>
+        <input type="text" id="trainer-specialty" name="specialty" required>
+        <label for="trainer-bio">Βιογραφικό:</label>
+        <textarea id="trainer-bio" name="bio" required></textarea>
+        <button type="submit">Αποθήκευση Γυμναστή</button>
+      </form>
+    </section>
+
+    <!-- 4. Διαχείριση Προγραμμάτων -->
+    <section id="program-management">
+      <h2>Διαχείριση Προγραμμάτων</h2>
+      <div id="programs-list">
+        <!-- Λίστα προγραμμάτων -->
+      </div>
+      <form id="program-form">
+        <h3>Δημιουργία / Επεξεργασία Προγράμματος</h3>
+        <input type="hidden" id="program-id" name="programId">
+        <label for="program-name">Όνομα:</label>
+        <input type="text" id="program-name" name="name" required>
+        <label for="program-type">Τύπος:</label>
+        <input type="text" id="program-type" name="programType" required>
+        <label for="program-category">Κατηγορία:</label>
+        <input type="text" id="program-category" name="category" required>
+        <label for="program-description">Περιγραφή:</label>
+        <textarea id="program-description" name="description" required></textarea>
+        <button type="submit">Αποθήκευση Προγράμματος</button>
+      </form>
+    </section>
+
+    <!-- 5. Διαχείριση Ομαδικών Προγραμμάτων -->
+    <section id="group-programs-management">
+      <h2>Διαχείριση Ομαδικών Προγραμμάτων</h2>
+      <div id="group-programs-list">
+        <!-- Λίστα ομαδικών προγραμμάτων -->
+      </div>
+      <form id="group-program-form">
+        <h3>Δημιουργία / Επεξεργασία Ομαδικού Προγράμματος</h3>
+        <input type="hidden" id="group-program-id" name="groupProgramId">
+        <label for="group-day">Ημέρα:</label>
+        <input type="text" id="group-day" name="day" required>
+        <label for="group-time">Ώρα:</label>
+        <input type="time" id="group-time" name="time" required>
+        <label for="group-trainer">Γυμναστής:</label>
+        <select id="group-trainer" name="trainerId">
+          <!-- Επιλογές για γυμναστές φορτώνονται δυναμικά -->
+        </select>
+        <label for="group-capacity">Μέγιστη Χωρητικότητα:</label>
+        <input type="number" id="group-capacity" name="capacity" required>
+        <button type="submit">Αποθήκευση Ομαδικού Προγράμματος</button>
+      </form>
+    </section>
+
+    <!-- 6. Διαχείριση Ανακοινώσεων/Προσφορών -->
+    <section id="announcement-management">
+      <h2>Διαχείριση Ανακοινώσεων/Προσφορών</h2>
+      <div id="announcements-list">
+        <!-- Λίστα ανακοινώσεων -->
+      </div>
+      <form id="announcement-form">
+        <h3>Δημιουργία / Επεξεργασία Ανακοίνωσης</h3>
+        <input type="hidden" id="announcement-id" name="announcementId">
+        <label for="announcement-title">Τίτλος:</label>
+        <input type="text" id="announcement-title" name="title" required>
+        <label for="announcement-description">Περιγραφή:</label>
+        <textarea id="announcement-description" name="description" required></textarea>
+        <label for="announcement-expiresAt">Λήξη (προαιρετικά):</label>
+        <input type="datetime-local" id="announcement-expiresAt" name="expiresAt">
+        <label for="announcement-isOffer">Προσφορά (true/false):</label>
+        <select id="announcement-isOffer" name="isOffer">
+          <option value="false">Όχι</option>
+          <option value="true">Ναι</option>
+        </select>
+        <button type="submit">Αποθήκευση Ανακοίνωσης</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Φόρτωση του admin.js για την διαχείριση λειτουργιών -->
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
