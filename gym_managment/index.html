@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
   <meta charset="UTF-8">
   <title>Gym Management System</title>
   <!-- Ανακατεύθυνση μετά από 0 δευτερόλεπτα -->
-  <meta http-equiv="refresh" content="0; url=admin-dashboard.html">
+  <meta http-equiv="refresh" content="0; url=login.html">
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html"; // Redirect to login if no token
+        return;
+      }
+
+      try {
+        // Fetch user details from your backend
+        const response = await fetch("http://localhost:3000/users/me", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch user details");
+        }
+
+        const user = await response.json();
+
+        // Redirect based on role
+        if (user.role === "admin") {
+          window.location.href = "admin-dashboard.html";
+        } else {
+          if (user.status === "approved") {
+            window.location.href = "user-dashboard.html";
+          } else {
+            alert("The user has not approved your account yet.")
+          }
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        window.location.href = "login.html"; // Redirect to login on error
+      }
+    });
+  </script>
 </head>
+
 <body>
   <p>Ανακατεύθυνση στο Διαχειριστικό Σύστημα...</p>
 </body>
+
 </html>
