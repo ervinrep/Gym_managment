@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Κοινά στυλ */
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    header, nav { text-align: center; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    section { background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    form { margin-top: 10px; }
+    form label { display: block; margin: 5px 0 2px; }
+    form input, form select { width: 100%; padding: 5px; margin-bottom: 10px; box-sizing: border-box; }
+    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    button:hover { background-color: #357ae8; }
+    .item { padding: 5px 0; border-bottom: 1px solid #eee; }
+    .item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>User Management</h1>
+    <nav>
+      <ul>
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="registration-requests.html">Registration Requests</a></li>
+        <li><a href="trainer-management.html">Trainer Management</a></li>
+        <li><a href="program-management.html">Program Management</a></li>
+        <li><a href="schedule-management.html">Schedule Management</a></li>
+        <li><a href="announcement-management.html">Announcement Management</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="user-management">
+      <h2>User Management</h2>
+      <div id="users-list">
+        <!-- Λίστα χρηστών -->
+      </div>
+      <form id="update-user-form">
+        <h3>Update User</h3>
+        <input type="hidden" id="user-id" name="userId">
+        <label for="user-firstName">First Name:</label>
+        <input type="text" id="user-firstName" name="firstName" required>
+        <label for="user-lastName">Last Name:</label>
+        <input type="text" id="user-lastName" name="lastName" required>
+        <label for="user-country">Country:</label>
+        <input type="text" id="user-country" name="country" required>
+        <label for="user-city">City:</label>
+        <input type="text" id="user-city" name="city" required>
+        <label for="user-address">Address:</label>
+        <input type="text" id="user-address" name="address" required>
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="email" required>
+        <label for="user-username">Username:</label>
+        <input type="text" id="user-username" name="username" required>
+        <label for="user-role">Role:</label>
+        <select id="user-role" name="role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Save</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

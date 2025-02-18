@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule Management - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Κοινά στυλ */
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    header, nav { text-align: center; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    section { background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    form { margin-top: 10px; }
+    form label { display: block; margin: 5px 0 2px; }
+    form input, form select { width: 100%; padding: 5px; margin-bottom: 10px; box-sizing: border-box; }
+    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    button:hover { background-color: #357ae8; }
+    .item { padding: 5px 0; border-bottom: 1px solid #eee; }
+    .item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Schedule Management</h1>
+    <nav>
+      <ul>
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="registration-requests.html">Registration Requests</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="trainer-management.html">Trainer Management</a></li>
+        <li><a href="program-management.html">Program Management</a></li>
+        <li><a href="announcement-management.html">Announcement Management</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="schedule-management">
+      <h2>Schedule Management</h2>
+      <div id="schedule-list">
+        <!-- Λίστα σχεδιασμένων προγραμμάτων -->
+      </div>
+      <form id="schedule-form">
+        <h3>Create / Update Schedule</h3>
+        <label for="schedule-id">ID</label>
+        <input type="text" id="schedule-id" name="scheduleId" disabled>
+        <label for="schedule-date">Date:</label>
+        <input type="date" id="schedule-day" name="day" required>
+        <label for="schedule-time">Time:</label>
+        <input type="time" id="schedule-time" name="time" required>
+        <label for="schedule-trainer">Trainer:</label>
+        <select id="schedule-trainer" name="trainerId">
+          <!-- Επιλογές για γυμναστές φορτώνονται δυναμικά -->
+        </select>
+        <label for="schedule-program">Program:</label>
+        <select id="schedule-program" name="programId">
+          <!-- Επιλογές για προγράμματα φορτώνονται δυναμικά -->
+        </select>
+        <label for="schedule-capacity">Max Capacity:</label>
+        <input type="number" id="schedule-capacity" name="capacity">
+        <button type="submit">Save</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

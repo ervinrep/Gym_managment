@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Book an appointment - User Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; }
+    header { text-align: center; margin-bottom: 20px; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    section { background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    form { margin-top: 10px; }
+    form label { display: block; margin: 5px 0 2px; }
+    form input, form select { width: 100%; padding: 5px; margin-bottom: 10px; }
+    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
+    button:hover { background-color: #357ae8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Book an appointment</h1>
+    <nav>
+      <ul>
+        <li><a href="user-home.html">Services</a></li>
+        <li><a href="user-booking.html">Book an Appointment</a></li>
+        <li><a href="user-history.html">Reservation History</a></li>
+        <li><a href="user-announcements.html">Announcements</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="booking-section">
+      <h2>Book an Appointment</h2>
+      <form id="booking-form">
+        <label for="program">Select Program:</label>
+        <select id="program" name="program" required>
+          <option value="">-- choose --</option>
+          <option value="personal">Personal training</option>
+          <option value="group">group training </option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time-slot">Time (Time Slot):</label>
+        <select id="time-slot" name="time-slot" required>
+          <option value="">-- choose --</option>
+          <option value="08:00">08:00</option>
+          <option value="10:00">10:00</option>
+          <option value="12:00">12:00</option>
+          <option value="14:00">14:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+        <button type="submit">book an appointment</button>
+      </form>
+      <p style="margin-top:10px; font-size: 0.9em; color: #555;">
+        * if a time slot is not avaiable, choose another one.
+      </p>
+    </section>
+  </main>
+  <script type="module" src="js/user.js"></script>
+</body>
+</html>

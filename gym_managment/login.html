@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
   <meta charset="UTF-8">
   <title>Login - Gym Management</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    body {
+     body {
       font-family: Arial, sans-serif;
       padding: 20px;
       max-width: 500px;
       margin: auto;
     }
-
     form {
       display: flex;
       flex-direction: column;
     }
-
     label,
     input,
     button {
@@ -25,22 +22,16 @@
     }
   </style>
 </head>
-
 <body>
   <h1>Login</h1>
   <form id="login-form">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
-
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-
     <button type="submit">Sign In</button>
   </form>
-
   <p>Dont have an account? <a href="register.html">Register here</a></p>
-
   <script type="module" src="js/main.js"></script>
 </body>
-
 </html>

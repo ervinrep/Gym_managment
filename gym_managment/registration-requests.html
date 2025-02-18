@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Requests - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Κοινά στυλ */
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    header, nav { text-align: center; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+    nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    section { background: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    .item { padding: 5px 0; border-bottom: 1px solid #eee; }
+    .item:last-child { border-bottom: none; }
+    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; margin-right: 5px; }
+    button:hover { background-color: #357ae8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Registration Requests</h1>
+    <nav>
+      <ul>
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="trainer-management.html">Trainer Management</a></li>
+        <li><a href="program-management.html">Program Management</a></li>
+        <li><a href="schedule-management.html">Schedule Management</a></li>
+        <li><a href="announcement-management.html">Announcement Management</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="registration-requests">
+      <h2>Registration Requests</h2>
+      <div id="requests-list">
+        <!-- Τα αιτήματα εγγραφής φορτώνονται δυναμικά μέσω JavaScript -->
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

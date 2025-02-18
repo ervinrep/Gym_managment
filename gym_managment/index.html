@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
   <meta charset="UTF-8">
   <title>Gym Management System</title>
@@ -13,7 +12,6 @@
         window.location.href = "login.html"; // Redirect to login if no token
         return;
       }
-
       try {
         // Fetch user details from your backend
         const response = await fetch("http://localhost:3000/users/me", {
@@ -23,13 +21,10 @@
             "Content-Type": "application/json"
           }
         });
-
         if (!response.ok) {
           throw new Error("Failed to fetch user details");
         }
-
         const user = await response.json();
-
         // Redirect based on role
         if (user.role === "admin") {
           window.location.href = "admin-dashboard.html";
@@ -47,9 +42,7 @@
     });
   </script>
 </head>
-
 <body>
   <p>Ανακατεύθυνση στο Διαχειριστικό Σύστημα...</p>
 </body>
-
 </html>

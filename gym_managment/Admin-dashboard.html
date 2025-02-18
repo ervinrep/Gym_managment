@@ -5,20 +5,11 @@
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* Απλά στυλ για παράδειγμα */
     body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-    header { text-align: center; }
-    header nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; }
-    header nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
-    section { background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-    h2 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-    form { margin-top: 10px; }
-    form label { display: block; margin: 5px 0 2px; }
-    form input, form select, form textarea { width: 100%; padding: 5px; margin-bottom: 10px; box-sizing: border-box; }
-    button { padding: 7px 12px; background-color: #4285f4; color: #fff; border: none; border-radius: 3px; cursor: pointer; }
-    button:hover { background-color: #357ae8; }
-    .item { padding: 5px 0; border-bottom: 1px solid #eee; }
-    .item:last-child { border-bottom: none; }
+    header { text-align: center; margin-bottom: 20px; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; }
+    nav ul li a { text-decoration: none; color: #4285f4; font-weight: bold; }
+    #logout-btn { background-color: #e74c3c; color: #fff; border: none; border-radius: 3px; padding: 5px 10px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -26,174 +17,24 @@
     <h1>Admin Dashboard</h1>
     <nav>
       <ul>
-        <li><a href="#registration-requests">Registration Requests</a></li>
-        <li><a href="#user-management">User Manegement</a></li>
-        <li><a href="#trainer-management">Trainer Management</a></li>
-        <li><a href="#program-management">Program Management</a></li>
-        <li><a href="#group-programs-management">Schedule Management</a></li>
-        <li><a href="#announcement-management">Announcement Management</a></li>
-        <button id="logout-btn">Logout</button>
+        <li><a href="registration-requests.html">Registration Requests</a></li>
+        <li><a href="user-management.html">User Management</a></li>
+        <li><a href="trainer-management.html">Trainer Management</a></li>
+        <li><a href="program-management.html">Program Management</a></li>
+        <li><a href="schedule-management.html">Schedule Management</a></li>
+        <li><a href="announcement-management.html">Announcement Management</a></li>
       </ul>
+      <button id="logout-btn">Logout</button>
     </nav>
   </header>
-
   <main>
-    <!-- 1. Διαχείριση Αιτημάτων Εγγραφής -->
-    <section id="registration-requests">
-      <h2>Registration Requests</h2>
-      <div id="requests-list">
-        <!-- Τα αιτήματα εγγραφής φορτώνονται δυναμικά -->
-      </div>
-    </section>
-
-    <!-- 2. Διαχείριση Χρηστών -->
-    <section id="user-management">
-      <h2>User Management</h2>
-      <div id="users-list">
-        <!-- Λίστα χρηστών -->
-      </div>
-      <form id="update-user-form">
-        <h3>Update User</h3>
-        <input type="hidden" id="user-id" name="userId">
-        <label for="user-firstName">First Name:</label>
-        <input type="text" id="user-firstName" name="firstName" required>
-        <label for="user-lastName">Last Name:</label>
-        <input type="text" id="user-lastName" name="lastName" required>
-        <label for="user-country">Country:</label>
-        <input type="text" id="user-country" name="country" required>
-        <label for="user-city">City:</label>
-        <input type="text" id="user-city" name="city" required>
-        <label for="user-address">Address:</label>
-        <input type="text" id="user-address" name="address" required>
-        <label for="user-email">Email:</label>
-        <input type="email" id="user-email" name="email" required>
-        <label for="user-username">Username:</label>
-        <input type="text" id="user-username" name="username" required>
-        <label for="user-role">Role:</label>
-        <select id="user-role" name="role">
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Save</button>
-      </form>
-    </section>
-
-    <!-- 3. Διαχείριση Γυμναστών -->
-    <section id="trainer-management">
-      <h2>Trainer Management</h2>
-      <div id="trainers-list">
-        <!-- Λίστα γυμναστών -->
-      </div>
-      <form id="trainer-form">
-        <h3>Create / Update Trainer</h3>
-        <label for="trainer-id">ID</label>
-        <input type="text" id="trainer-id" name="trainerId" disabled>
-        <label for="trainer-firstName">First Name:</label>
-        <input type="text" id="trainer-firstName" name="firstName" required>
-        <label for="trainer-lastName">Last Name:</label>
-        <input type="text" id="trainer-lastName" name="lastName" required>
-        <label for="trainer-specialty">Specialty:</label>
-        <select id="trainer-specialty" name="specialty">
-          <option value="pilates">Pilates</option>
-          <option value="crossfit">Crossfit</option>
-          <option value="open-gym">Open-Gym</option>
-          <option value="swimming">Swimming</option>
-        </select>
-        <label for="trainer-bio">Bio:</label>
-        <textarea id="trainer-bio" name="bio" ></textarea>
-        <button type="submit">Save</button>
-        <button id="clear-trainer-form">Clear</button>
-      </form>
-    </section>
-
-    <!-- 4. Διαχείριση Προγραμμάτων -->
-    <section id="program-management">
-      <h2>Program Management</h2>
-      <div id="programs-list">
-        <!-- Λίστα προγραμμάτων -->
-      </div>
-      <form id="program-form">
-        <h3>Create / Update Program</h3>
-        <label for="program-id">ID</label>
-        <input type="text" id="program-id" name="programId" disabled>
-        <label for="program-name">Name:</label>
-        <input type="text" id="program-name" name="name" required>
-        <label for="program-type">Type:</label>
-        <select id="program-type" name="type">
-          <option value="pilates">Pilates</option>
-          <option value="crossfit">Crossfit</option>
-          <option value="open-gym">Open-Gym</option>
-          <option value="swimming">Swimming</option>
-        </select>
-        <label for="program-category">Category:</label>
-        <select id="program-category" name="category" required>
-          <option value="class">Class</option>
-          <option value="personal">Personal</option>
-        </select>
-        <label for="program-maxCapacity">Max Capacity:</label>
-        <input type="number" id="program-maxCapacity" name="maxCapacity" required>
-        <label for="program-description">Description:</label>
-        <textarea id="program-description" name="description"></textarea>
-        <button type="submit">Save</button>
-        <button id="clear-program-form">Clear</button>
-      </form>
-    </section>
-
-    <!-- 5. Διαχείριση Σχεδιασμένων Προγραμμάτων -->
-    <section id="schedule-management">
-      <h2>Schedule Management</h2>
-      <div id="schedule-list">
-        <!-- Λίστα σχεδιασμένων προγραμμάτων -->
-      </div>
-      <form id="schedule-form">
-        <h3>Create / Update Schedule</h3>
-        <label for="schedule-id">ID</label>
-        <input type="text" id="schedule-id" name="scheduleId" disabled>
-        <label for="schedule-date">Date:</label>
-        <input type="Date" id="schedule-day" name="day" required>
-        <label for="schedule-time">Time:</label>
-        <input type="time" id="schedule-time" name="time" required>
-        <label for="schedule-trainer">Trainer:</label>
-        <select id="schedule-trainer" name="trainerId">
-          <!-- Επιλογές για γυμναστές φορτώνονται δυναμικά -->
-        </select>
-        <label for="schedule-program">Program:</label>
-        <select id="schedule-program" name="programId">
-          <!-- Επιλογές για προγραμματα φορτώνονται δυναμικά -->
-        </select>
-        <label for="schedule-capacity">Max Capacity:</label>
-        <input type="number" id="schedule-capacity" name="capacity">
-        <button type="submit">Save</button>
-      </form>
-    </section>
-
-    <!-- 6. Διαχείριση Ανακοινώσεων/Προσφορών -->
-    <section id="announcement-management">
-      <h2>Διαχείριση Ανακοινώσεων/Προσφορών</h2>
-      <div id="announcements-list">
-        <!-- Λίστα ανακοινώσεων -->
-      </div>
-      <form id="announcement-form">
-        <h3>Δημιουργία / Επεξεργασία Ανακοίνωσης</h3>
-        <input type="hidden" id="announcement-id" name="announcementId">
-        <label for="announcement-title">Τίτλος:</label>
-        <input type="text" id="announcement-title" name="title" required>
-        <label for="announcement-description">Περιγραφή:</label>
-        <textarea id="announcement-description" name="description" required></textarea>
-        <label for="announcement-expiresAt">Λήξη (προαιρετικά):</label>
-        <input type="datetime-local" id="announcement-expiresAt" name="expiresAt">
-        <label for="announcement-isOffer">Προσφορά (true/false):</label>
-        <select id="announcement-isOffer" name="isOffer">
-          <option value="false">Όχι</option>
-          <option value="true">Ναι</option>
-        </select>
-        <button type="submit">Αποθήκευση Ανακοίνωσης</button>
-      </form>
-    </section>
+    <p>Welcome to the Admin Dashboard. Select one of the sections above to get started..</p>
   </main>
-
-  <!-- Φόρτωση του admin.js για την διαχείριση λειτουργιών -->
-  <script type="module" src="js/admin.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <script>
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = 'index.html'; // Μπορείς να ορίσεις εδώ την αρχική σελίδα του συστήματος
+    });
+  </script>
 </body>
 </html>
